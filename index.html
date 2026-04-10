@@ -95,12 +95,12 @@
     <script>
 
         const oktaSignIn = new OktaSignIn({
-            baseUrl: "https://{your okta subdomain}.okta.com", //e.g. https://mydomain.okta.com
-            clientId: "{your app configuration ID}",
-            redirectUri: "{the published URL for index.html}", // For example http://localhost:5501/CopilotStudioSamples/3rdPartySSOWithOKTA/public/index.html
+            baseUrl: "https://trial-9994152-admin.okta.com", //e.g. https://mydomain.okta.com
+            clientId: "0oa11tapso0uWzxs0698",
+            redirectUri: "https://ravimisdrp.github.io/copilot-okta/index.html", // For example http://localhost:5501/CopilotStudioSamples/3rdPartySSOWithOKTA/public/index.html
             authParams: {
                 responseType: ['code'],
-                issuer: "https://{your okta subdomain}.okta.com/oauth2/default", //for example: https://mydomain.okta.com/oauth2/default
+                issuer: "https://trial-9994152-admin.okta.com/oauth2/default", //for example: https://mydomain.okta.com/oauth2/default
                 display: 'page',
                 pkce: true,
                 scopes: ['openid', 'email', 'profile'],
@@ -131,7 +131,7 @@
         function signOut() {
             oktaSignIn.authClient.signOut({
                 clearTokensBeforeRedirect: true,
-                postLogoutRedirectUri: '{The published URL for signout.html}'// For example, 'http://127.0.0.1:5501/CopilotStudioSamples/3rdPartySSOWithOKTA/public/signout.html'
+                postLogoutRedirectUri: 'https://ravimisdrp.github.io/copilot-okta/signout.html'// For example, 'http://127.0.0.1:5501/CopilotStudioSamples/3rdPartySSOWithOKTA/public/signout.html'
             });
         }
 
@@ -163,7 +163,7 @@
                     userEmail = idToken.claims.email;
                 });
 
-            const tokenEndpoint = "{your copilot token endpoint}"
+            const tokenEndpoint = "https://default0bf964fe8dc3417eb765c6aae6c8df.ce.environment.api.powerplatform.com/copilotstudio/dataverse-backed/authenticated/bots/craeb_agentHDAPew/conversations?api-version=2022-03-01-preview"
 
             const userID = userEmail != null ?
                 (userEmail).substr(0, 36) :
